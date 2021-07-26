@@ -1,12 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Home from './pages/Home';
+import { ThemeProvider } from '@material-ui/core';
+import { cheerfulAndEnergetic, livelyYetSoothing } from './styles/theme';
+import AppLayout from './components/layout/AppLayout';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={cheerfulAndEnergetic}>
+      <AppLayout>
+        <Home />
+      </AppLayout>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
